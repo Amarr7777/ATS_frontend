@@ -1,0 +1,82 @@
+.analysisContainer {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: #171B24;
+    /* dark.300 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #10131A;
+    /* dark.400 */
+}
+
+.scoreCircle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.keywordTag {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: #10131A;
+    /* dark.400 */
+    color: #4FD1C5;
+    /* brand.300 */
+    margin: 0.25rem;
+    display: inline-block;
+    border: 1px solid #2C7A7B;
+    /* brand.600 */
+}
+
+.suggestionList {
+    margin-top: 1.5rem;
+    background-color: #10131A;
+    /* dark.400 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #171B24;
+    /* dark.300 */
+}
+
+.suggestionItem {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    color: #F7FAFC;
+    /* dark.50 */
+}
+
+.suggestionIcon {
+    margin-right: 0.5rem;
+    color: #10B981;
+    /* success.500 */
+}
+
+.atsScoreContainer {
+    background-color: #171B24;
+    /* dark.300 */
+    border: 1px solid #10131A;
+    /* dark.400 */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skillsContainer {
+    background-color: #10131A;
+    /* dark.400 */
+    border: 1px solid #171B24;
+    /* dark.300 */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.atsAnalyzer {
+    background-color: #171B24;
+    /* dark.300 */
+    border: 1px solid #10131A;
+    /* dark.400 */
+    border-radius: 1rem;
+    padding: 1.5rem;
+}

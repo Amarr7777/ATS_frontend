@@ -1,0 +1,76 @@
+.container {
+    background-color: #171B24;
+    /* dark.300 */
+    border-color: #10131A;
+    /* dark.400 */
+    border-width: 1px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.heading {
+    color: #4FD1C5;
+    /* brand.300 */
+    margin-bottom: 1.5rem;
+}
+
+.scoreText {
+    color: #F7FAFC;
+    /* dark.50 */
+    font-size: 1.125rem;
+}
+
+.scoreValue {
+    color: #4FD1C5;
+    /* brand.300 */
+    font-weight: bold;
+}
+
+.sectionTitle {
+    color: #4FD1C5;
+    /* brand.300 */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.factorItem {
+    margin-bottom: 1rem;
+}
+
+.factorLabel {
+    color: #F7FAFC;
+    /* dark.50 */
+    margin-bottom: 0.25rem;
+}
+
+.progressBar {
+    background-color: #10131A;
+    /* dark.400 */
+}
+
+.factorDescription {
+    color: #A0AEC0;
+    /* gray.400 */
+    font-size: 0.875rem;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    color: #F7FAFC;
+    /* dark.50 */
+}
+
+.successIcon {
+    color: #10B981;
+    /* success.500 */
+    margin-right: 0.5rem;
+}
+
+.warningIcon {
+    color: #F59E0B;
+    /* warning.500 */
+    margin-right: 0.5rem;
+}

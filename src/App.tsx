@@ -8,8 +8,6 @@ import ResultsPage from './pages/ResultsPage';
 import InterviewPage from './pages/InterviewPage';
 import theme from './theme';
 import { ResumeProvider } from './context/ResumeContext';
-import Upload from './components/Upload';
-import Analysis from './components/Analysis';
 import styles from './styles/App.module.css';
 
 function App() {

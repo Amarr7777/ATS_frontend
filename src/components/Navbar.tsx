@@ -12,7 +12,11 @@ const Links = [
   { name: 'Results', path: '/results' },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  onGetStartedClick?: () => void;
+}
+
+const Navbar = ({ onGetStartedClick }: NavbarProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
@@ -53,7 +57,7 @@ const Navbar = () => {
           <button className={styles.mobileMenuButton} onClick={toggleMenu}>
             {isOpen ? <CloseIcon /> : <HamburgerIcon />}
           </button>
-          <button className={styles.getStartedButton}>
+          <button className={styles.getStartedButton} onClick={onGetStartedClick || (() => {})}>
             Get Started
           </button>
         </div>
@@ -73,7 +77,7 @@ const Navbar = () => {
               {link.name}
             </RouterLink>
           ))}
-          <button className={styles.getStartedButton}>
+          <button className={styles.getStartedButton} onClick={onGetStartedClick ? () => { onGetStartedClick(); toggleMenu(); } : toggleMenu}>
             Get Started
           </button>
         </div>
@@ -82,4 +86,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

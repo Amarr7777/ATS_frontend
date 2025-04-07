@@ -90,12 +90,14 @@ export default function UploadPage() {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+        withCredentials: true
       });
-      console.log("response: ",response.data)
+      const resumeText = response.data.resume_text;
+      localStorage.setItem('resumeText', resumeText);
       navigate('/results', {
         state: {
           analysisData: response.data,
-          resumeText: response.data?.resumeText || ''
+          resumeText: response.data.resume_text
         }
       });
     } catch (err: any) {

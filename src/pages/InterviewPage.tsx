@@ -1,54 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import {
-  Container,
-  VStack,
-  Heading,
-  Text,
-  Button,
-  useToast,
-  Box,
-} from '@chakra-ui/react';
+import { Container, VStack, Heading, Text, Button, useToast, Box } from '@chakra-ui/react';
 import AIInterview from '../components/AIInterview';
 
 export default function InterviewPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const toast = useToast();
-  const [resumeText, setResumeText] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [resumeText, setResumeText] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    try {
-      // Try to get resume text from location state
-      const stateResumeText = location.state?.resumeText;
-      
-      if (stateResumeText) {
-        setResumeText(stateResumeText);
-        // Store in localStorage for persistence
-        localStorage.setItem('resumeText', stateResumeText);
-      } else {
-        // If not in state, try localStorage
-        const storedResumeText = localStorage.getItem('resumeText');
-        
-        if (storedResumeText) {
-          setResumeText(storedResumeText);
-        } else {
-          setError('No resume found. Please upload your resume first.');
-          toast({
-            title: 'No Resume Found',
-            description: 'Please upload your resume first',
-            status: 'warning',
-            duration: 3000,
-            isClosable: true,
-          });
-        }
-      }
-    } catch (err) {
-      console.error('Error loading resume:', err);
-      setError('Error loading resume data');
+    const stateResumeText = localStorage.getItem('resumeText');
+    if (stateResumeText) {
+      setResumeText(stateResumeText);
+    } else {
+      setError('No resume found. Please upload your resume first.');
+      toast({
+        title: 'No Resume Found',
+        description: 'Please upload your resume first',
+        status: 'warning',
+        duration: 3000,
+        isClosable: true,
+      });
+      // Optionally fetch /interview to check session
+      fetch('http://localhost:8000/interview', {
+        method: 'POST',
+        credentials: 'include',
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.error) {
+            navigate('/upload');
+          }
+        });
     }
-  }, [location.state, toast]);
+  }, [navigate, toast]);
 
   if (error || !resumeText) {
     return (
@@ -75,4 +62,4 @@ export default function InterviewPage() {
       </Container>
     </Box>
   );
-} 
+}
